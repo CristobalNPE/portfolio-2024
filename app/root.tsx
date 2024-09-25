@@ -1,4 +1,4 @@
-import { LoaderFunctionArgs } from "@remix-run/node";
+import { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
 import {
   Links,
   Meta,
@@ -16,14 +16,19 @@ import {
 } from "remix-themes";
 import { cn } from "./lib/utils";
 import { themeSessionResolver } from "./sessions.server";
-import "./styles/font.css";
-import "./styles/tailwind.css";
+import fontStyleSheetUrl from "./styles/font.css?url";
+import tailwindStyleSheetUrl from "./styles/tailwind.css?url";
 export async function loader({ request }: LoaderFunctionArgs) {
   const { getTheme } = await themeSessionResolver(request);
   return {
     theme: getTheme(),
   };
 }
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: fontStyleSheetUrl },
+  { rel: "stylesheet", href: tailwindStyleSheetUrl },
+];
 function Layout({ children }: { children: React.ReactNode }) {
   const data = useRouteLoaderData<typeof loader>("root");
   const [theme] = useTheme();
