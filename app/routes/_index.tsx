@@ -30,22 +30,29 @@ export default function Index() {
     </main>
   );
 }
-
 function AboutMe() {
   return (
-    <Paper className="flex-1">
-      <h1 className="text-[clamp(2.25rem,3.5vw,3.25rem)] font-bold ">
-        Bienvenido!
+    <Paper className="flex-1 flex flex-col items-center text-center ">
+      <h1 className="w-full  text-[clamp(1.5rem,4vw,2.5rem)] font-bold mb-2 break-words hyphens-auto tracking-tighter leading-tight">
+        <span className="text-primary/80 animate-pulse mr-1">&lt;</span>
+        Cristóbal&nbsp;
+        <span className="inline-block">
+          Pulgar
+          <span className="text-primary/80 animate-pulse ml-1">/&gt;</span>
+        </span>
       </h1>
-      <h2 className="text-xl sm:text-2xl  mb-4">
-        Soy <span className="font-bold">Cristóbal Pulgar Estay</span>
+      <h2 className="text-[clamp(1.2rem,3vw,1.8rem)] font-bold mb-4">
+        Desarrollador Web
       </h2>
-      <p className="text-lg  text-balance text-muted-foreground">
-        <span className="text-foreground">Desarrollador Web Full Stack</span>,
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cupiditate
-        dicta praesentium commodi maiores repudiandae eos eaque in,
-        necessitatibus ex nisi quia.
-      </p>
+      <div className="text-[clamp(0.9rem,2vw,1.1rem)] max-w-prose h-full flex flex-col gap-4 ">
+        <p className="text-muted-foreground text-[clamp(0.9rem,2vw,1.1rem)] max-w-prose leading-9 flex-1 flex items-center">
+          Especializado en crear soluciones web eficientes y atractivas.
+          Transformo conceptos en aplicaciones funcionales que aportan valor
+          real.
+        </p>
+
+        <p className="text-foreground ">¡Bienvenido a mi repositorio digital!</p>
+      </div>
     </Paper>
   );
 }
@@ -64,18 +71,18 @@ function PageOptions() {
 
 function Contact() {
   return (
-    <Paper className="h-fit flex gap-4 justify-center flex-col sm:flex-row">
+    <Paper className="h-fit flex gap-4 justify-center flex-col md:flex-row">
       <Button
         size={"lg"}
         className="font-bold h-16 text-xl w-full relative group "
       >
         <span className="group-hover:-translate-x-2 transition-all">
-          Ponte en contacto
+          Contacto
         </span>
         <Icon
           size="md"
           name="message-2"
-          className="absolute right-12  opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all"
+          className="absolute right-24  opacity-0 group-hover:opacity-100 group-hover:translate-x-4 transition-all"
         />
       </Button>
       <Button
@@ -111,7 +118,7 @@ function Projects() {
 
 function SocialsCard({ icon, name }: { icon: IconName; name: string }) {
   return (
-    <div className="flex flex-col gap-4 aspect-square justify-center items-center rounded-md p-5  hexagon cursor-pointer hover:bg-accent transition-colors group">
+    <div className="flex flex-col gap-4 aspect-square justify-center items-center rounded-md p-5  hexagon cursor-pointer hover:bg-accent hover:shadow-sm transition-colors group">
       <Icon
         className="text-4xl text-foreground  transition-all group-hover:scale-150   group-hover:text-primary"
         name={icon}
