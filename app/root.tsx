@@ -16,8 +16,8 @@ import {
 } from "remix-themes";
 import { cn } from "./lib/utils";
 import { themeSessionResolver } from "./sessions.server";
-import "./tailwind.css";
-
+import "./styles/font.css";
+import "./styles/tailwind.css";
 export async function loader({ request }: LoaderFunctionArgs) {
   const { getTheme } = await themeSessionResolver(request);
   return {

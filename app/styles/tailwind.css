@@ -5,24 +5,6 @@
 html {
   font-family: CommitMono;
 }
-@font-face {
-  font-display: swap;
-  font-family: "CommitMono";
-  font-weight: 400;
-  src: url(/public/fonts/CommitMono-400-Regular.otf) format("otf");
-}
-@font-face {
-  font-display: swap;
-  font-family: "CommitMono";
-  font-weight: 600;
-  src: url(/public/fonts/CommitMono-600-Regular.otf) format("otf");
-}
-@font-face {
-  font-display: swap;
-  font-family: "CommitMono";
-  font-weight: 700;
-  src: url(/public/fonts/CommitMono-700-Regular.otf) format("otf");
-}
 
 @layer base {
   :root {

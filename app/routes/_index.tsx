@@ -8,7 +8,7 @@ import { TechStack } from "~/components/tech-stack";
 export const meta: MetaFunction = () => {
   return [
     { title: "Cristóbal Pulgar Estay | Porfolio" },
-    { name: "description", content: "Welcome to my developer portfolio!" },
+    { name: "description", content: "Developer Portfolio" },
   ];
 };
 

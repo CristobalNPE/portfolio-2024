@@ -1,0 +1,26 @@
+/* CommitMono-400-Regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Commit Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/CommitMono-400-Regular.otf') format('opentype');
+}
+
+/* CommitMono-600-Regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Commit Mono';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/CommitMono-600-Regular.otf') format('opentype');
+}
+
+/* CommitMono-700-Regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Commit Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/CommitMono-700-Regular.otf') format('opentype');
+}
