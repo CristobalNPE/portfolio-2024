@@ -25,10 +25,32 @@ export async function loader({ request }: LoaderFunctionArgs) {
   };
 }
 
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: fontStyleSheetUrl },
-  { rel: "stylesheet", href: tailwindStyleSheetUrl },
-];
+export const links: LinksFunction = () => {
+  console.log(fontStyleSheetUrl);
+  return [
+    { rel: "stylesheet", href: fontStyleSheetUrl },
+    { rel: "stylesheet", href: tailwindStyleSheetUrl },
+    // {
+    //   rel: "preload",
+    //   as: "font",
+    //   href: "/fonts/CommitMono-400-Regular.otf",
+    //   type: "font/opentype",
+    // },
+    // {
+    //   rel: "preload",
+    //   as: "font",
+    //   href: "/fonts/CommitMono-600-Regular.otf",
+    //   type: "font/opentype",
+    // },
+    // {
+    //   rel: "preload",
+    //   as: "font",
+    //   href: "/fonts/CommitMono-700-Regular.otf",
+    //   type: "font/opentype",
+    // },
+  ].filter(Boolean);
+};
+
 function Layout({ children }: { children: React.ReactNode }) {
   const data = useRouteLoaderData<typeof loader>("root");
   const [theme] = useTheme();
@@ -37,7 +59,10 @@ function Layout({ children }: { children: React.ReactNode }) {
     <html
       lang="en"
       data-theme={theme}
-      className={cn(theme, "min-h-dvh place-items-center grid overflow-x-hidden selection:text-foreground selection:bg-primary")}
+      className={cn(
+        theme,
+        "min-h-dvh place-items-center grid overflow-x-hidden selection:text-foreground selection:bg-primary"
+      )}
     >
       <head>
         <meta charSet="utf-8" />
