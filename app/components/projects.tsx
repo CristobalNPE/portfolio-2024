@@ -7,7 +7,7 @@ import { Icon } from "./ui/icon";
 
 export function Projects() {
   return (
-    <Paper className="place-content-center h-fit grid flex-1">
+    <Paper className=" h-fit grid flex-1">
       <h1 className="text-xl font-bold mb-4 ">Proyectos recientes</h1>
       {proyects.map((proyect) => (
         <ProyectCard key={proyect.name} proyect={proyect} />
