@@ -7,7 +7,7 @@ export function AboutMe() {
     <Paper className="flex-1 flex flex-col items-center text-center relative overflow-hidden">
       <h1 className="w-full  text-[clamp(1.5rem,4vw,2.5rem)] font-bold mb-2 break-words hyphens-auto tracking-tighter leading-tight">
         <span className="text-primary/80 animate-pulse mr-1">&lt;</span>
-        <img src={CNPELogo} alt="CNPE Logo" className="absolute inset-0 opacity-5" />
+        <img src={CNPELogo} alt="CNPE Logo" className="absolute inset-0 opacity-5 select-none" />
         Cristóbal&nbsp;
         <span className="inline-block">
           Pulgar
