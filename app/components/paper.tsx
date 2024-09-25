@@ -10,7 +10,7 @@ export function Paper({ children, className }: PaperProps) {
   return (
     <div
       className={cn(
-        `isolate bg-gradient-to-br from-secondary/30 to-secondary/40 backdrop-blur-md border rounded-lg p-9 shadow-md ring-1 ring-black/5 `,
+        `isolate bg-gradient-to-br from-secondary/30 to-secondary/40 backdrop-blur-md border rounded-lg p-9 shadow-md ring-1 ring-black/5 overflow-x-hidden`,
         className && className
       )}
     >

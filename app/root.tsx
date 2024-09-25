@@ -32,7 +32,7 @@ function Layout({ children }: { children: React.ReactNode }) {
     <html
       lang="en"
       data-theme={theme}
-      className={cn(theme, "min-h-dvh sm:h-dvh overflow-x-hidden")}
+      className={cn(theme, "min-h-dvh place-items-center grid overflow-x-hidden")}
     >
       <head>
         <meta charSet="utf-8" />
