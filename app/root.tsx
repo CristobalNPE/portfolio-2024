@@ -8,6 +8,7 @@ import {
   useLoaderData,
   useRouteLoaderData,
 } from "@remix-run/react";
+import { SpeedInsights } from "@vercel/speed-insights/remix";
 import {
   PreventFlashOnWrongTheme,
   Theme,
@@ -26,28 +27,9 @@ export async function loader({ request }: LoaderFunctionArgs) {
 }
 
 export const links: LinksFunction = () => {
-  console.log(fontStyleSheetUrl);
   return [
     { rel: "stylesheet", href: fontStyleSheetUrl },
     { rel: "stylesheet", href: tailwindStyleSheetUrl },
-    // {
-    //   rel: "preload",
-    //   as: "font",
-    //   href: "/fonts/CommitMono-400-Regular.otf",
-    //   type: "font/opentype",
-    // },
-    // {
-    //   rel: "preload",
-    //   as: "font",
-    //   href: "/fonts/CommitMono-600-Regular.otf",
-    //   type: "font/opentype",
-    // },
-    // {
-    //   rel: "preload",
-    //   as: "font",
-    //   href: "/fonts/CommitMono-700-Regular.otf",
-    //   type: "font/opentype",
-    // },
   ].filter(Boolean);
 };
 
@@ -75,6 +57,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         suppressHydrationWarning
       >
         {children}
+        <SpeedInsights />
         <ScrollRestoration />
         <PreventFlashOnWrongTheme ssrTheme={Boolean(data?.theme)} />
         <Scripts />
