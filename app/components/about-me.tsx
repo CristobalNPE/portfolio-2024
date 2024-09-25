@@ -35,7 +35,7 @@ export function AboutMe() {
             "• Optimización de rendimiento",
             1000,
             "• Integración de tecnologías modernas",
-            1000,
+            1001,
           ]}
           wrapper="p"
           speed={40}
