@@ -1,4 +1,8 @@
-import { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
+import {
+  LinksFunction,
+  LoaderFunctionArgs,
+  MetaFunction,
+} from "@remix-run/node";
 import {
   Links,
   Meta,
@@ -28,9 +32,34 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
 export const links: LinksFunction = () => {
   return [
-    { rel: "stylesheet", href: fontStyleSheetUrl },
     { rel: "stylesheet", href: tailwindStyleSheetUrl },
+    { rel: "stylesheet", href: fontStyleSheetUrl },
+    {
+      rel: "preload",
+      href: "/fonts/CommitMono-400-Regular.otf",
+      as: "font",
+      type: "font/otf",
+    },
+    {
+      rel: "preload",
+      href: "/fonts/CommitMono-600-Regular.otf",
+      as: "font",
+      type: "font/otf",
+    },
+    {
+      rel: "preload",
+      href: "/fonts/CommitMono-700-Regular.otf",
+      as: "font",
+      type: "font/otf",
+    },
   ].filter(Boolean);
+};
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Cristóbal Pulgar Estay | Portafolio" },
+    { name: "description", content: `Portafolio de Cristóbal Pulgar Estay` },
+  ];
 };
 
 function Layout({ children }: { children: React.ReactNode }) {
